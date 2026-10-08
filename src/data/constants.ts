@@ -1,0 +1,221 @@
+import { AspectRatio, PresetPrompt, StyleOption } from '../types';
+
+export const STYLE_OPTIONS: StyleOption[] = [
+  {
+    id: 'photorealistic',
+    nameUz: 'Fotorealistik',
+    descUz: 'Haqiqiy fotoapparat kadri, tabiiy yorug‘lik va 8K detallar',
+    iconName: 'Camera',
+    gradient: 'from-blue-500/20 to-cyan-500/20 border-cyan-500/30',
+    tag: 'Eng mashhur',
+  },
+  {
+    id: 'cinematic',
+    nameUz: 'Kinematik',
+    descUz: 'Gollivud filmlari estetikasi, chuqur soya va dramatik yorug‘lik',
+    iconName: 'Film',
+    gradient: 'from-amber-500/20 to-red-500/20 border-amber-500/30',
+    tag: 'Dramatik',
+  },
+  {
+    id: 'anime',
+    nameUz: 'Anime & Manga',
+    descUz: 'Makoto Shinkai uslubi, toza chiziqlar va yorqin ranglar',
+    iconName: 'Sparkles',
+    gradient: 'from-pink-500/20 to-rose-500/20 border-pink-500/30',
+    tag: 'Yaponiya',
+  },
+  {
+    id: '3d',
+    nameUz: '3D Grafika',
+    descUz: 'Unreal Engine 5 va Octane Render, hajmli va silliq tekstura',
+    iconName: 'Boxes',
+    gradient: 'from-violet-500/20 to-purple-500/20 border-violet-500/30',
+    tag: 'Render',
+  },
+  {
+    id: 'digital_art',
+    nameUz: 'Raqamli San‘at',
+    descUz: 'ArtStation trendi, mahoratli mo‘yqalam izlari va epik muhit',
+    iconName: 'Palette',
+    gradient: 'from-indigo-500/20 to-sky-500/20 border-indigo-500/30',
+    tag: 'Konsept',
+  },
+  {
+    id: 'illustration',
+    nameUz: 'Illyustratsiya',
+    descUz: 'Zamonaviy kitob va jurnal illyustratsiyasi, estetik shakllar',
+    iconName: 'PenTool',
+    gradient: 'from-emerald-500/20 to-teal-500/20 border-emerald-500/30',
+    tag: 'Dizayn',
+  },
+  {
+    id: 'fantasy',
+    nameUz: 'Fantastika',
+    descUz: 'Sehrli nurlar, afsonaviy olamlar va mistik atmosfera',
+    iconName: 'Wand2',
+    gradient: 'from-purple-500/20 to-pink-500/20 border-purple-500/30',
+    tag: 'Mistik',
+  },
+  {
+    id: 'cyberpunk',
+    nameUz: 'Kiberpank',
+    descUz: 'Kelajak shahri, neon chiroqlar, nam asfalt va gologrammalar',
+    iconName: 'Zap',
+    gradient: 'from-cyan-500/20 to-fuchsia-500/20 border-fuchsia-500/30',
+    tag: 'Kelajak',
+  },
+  {
+    id: 'minimalist',
+    nameUz: 'Minimalizm',
+    descUz: 'Toza kompozitsiya, o‘ylangan bo‘shliq va sokin ranglar',
+    iconName: 'Square',
+    gradient: 'from-zinc-500/20 to-stone-500/20 border-zinc-500/30',
+    tag: 'Sokin',
+  },
+  {
+    id: 'oil_painting',
+    nameUz: 'Moybo‘yoq',
+    descUz: 'Klassik kartina, ko‘rinuvchi bo‘yoq qatlamlari va muzey darajasi',
+    iconName: 'Brush',
+    gradient: 'from-amber-600/20 to-yellow-600/20 border-yellow-600/30',
+    tag: 'Klassika',
+  },
+];
+
+export const ASPECT_RATIOS: Array<{
+  id: AspectRatio;
+  label: string;
+  subLabel: string;
+  ratioClass: string;
+  iconWidth: number;
+  iconHeight: number;
+}> = [
+  {
+    id: '1:1',
+    label: '1:1',
+    subLabel: 'Kvadrat (Postlar)',
+    ratioClass: 'aspect-square',
+    iconWidth: 20,
+    iconHeight: 20,
+  },
+  {
+    id: '16:9',
+    label: '16:9',
+    subLabel: 'Landshaft (Keng)',
+    ratioClass: 'aspect-video',
+    iconWidth: 26,
+    iconHeight: 15,
+  },
+  {
+    id: '9:16',
+    label: '9:16',
+    subLabel: 'Vertikal (Stories/Reels)',
+    ratioClass: 'aspect-[9/16]',
+    iconWidth: 15,
+    iconHeight: 26,
+  },
+  {
+    id: '4:3',
+    label: '4:3',
+    subLabel: 'Klassik foto',
+    ratioClass: 'aspect-[4/3]',
+    iconWidth: 22,
+    iconHeight: 17,
+  },
+  {
+    id: '3:4',
+    label: '3:4',
+    subLabel: 'Portret formati',
+    ratioClass: 'aspect-[3/4]',
+    iconWidth: 17,
+    iconHeight: 22,
+  },
+];
+
+export const PRESET_PROMPTS: PresetPrompt[] = [
+  {
+    id: 'p1',
+    titleUz: 'Tog‘dagi zamonaviy superkar',
+    prompt: "Qorli alp tog'lari fonida turgan zamonaviy elektr superkar, oltin quyosh botishi, kinematik yorug'lik, yo'ldagi akslanishlar",
+    style: 'photorealistic',
+    aspectRatio: '16:9',
+    categoryUz: 'Avtomobillar & Tabiat',
+    sampleBadgeUz: 'Top Tavsiya',
+    sampleImageUrl: '/src/assets/images/mountain_car_1791459813137.jpg',
+  },
+  {
+    id: 'p2',
+    titleUz: 'Samarqand Registon — Kiberpank 2099',
+    prompt: "Qadimiy Samarqand Registon maydoni futuristik kiberpank 2099 yilida, neon yozuvlar, uchuvchi transport vositalari, nam marmar maydon va binafsha neon yog'dusi",
+    style: 'cyberpunk',
+    aspectRatio: '16:9',
+    categoryUz: 'O‘zbekiston & Kelajak',
+    sampleBadgeUz: 'O‘zbekiston',
+    sampleImageUrl: '/src/assets/images/samarkand_cyber_1791459837065.jpg',
+  },
+  {
+    id: 'p3',
+    titleUz: 'Atlas libosli go‘zal qiz portreti',
+    prompt: "O'zbek milliy ipak atlas libosidagi qiz portreti, nozik zargarlik buyumlari, tabiiy yumshoq quyosh nuri, 85mm f/1.4 linzasi, xira fon",
+    style: 'photorealistic',
+    aspectRatio: '3:4',
+    categoryUz: 'Portret & Madaniyat',
+    sampleBadgeUz: 'Portret',
+    sampleImageUrl: '/src/assets/images/atlas_portrait_1791459853242.jpg',
+  },
+  {
+    id: 'p4',
+    titleUz: 'Kosmik stansiyada choy ichayotgan astronavt',
+    prompt: "Yer sayyorasi manzarasi fonida, futuristik orbital stansiyaning oynasi yonida o'zbek piyolasidan choy ichayotgan astronavt, kosmik yorug'lik",
+    style: '3d',
+    aspectRatio: '1:1',
+    categoryUz: 'Kosmos & Fantastika',
+    sampleBadgeUz: 'Kreativ',
+    sampleImageUrl: '/src/assets/images/space_teahouse_1791459869149.jpg',
+  },
+  {
+    id: 'p5',
+    titleUz: 'Sehrli billur kiyik va nurli o‘rmon',
+    prompt: "Tungi sehrli o'rmonda turgan billurdek shaffof kiyik, atrofida uchib yurgan moviy yorug'lik zarralari, mo'jizaviy gullar va ertaknamo muhit",
+    style: 'fantasy',
+    aspectRatio: '1:1',
+    categoryUz: 'Fantastika',
+    sampleBadgeUz: 'Sehrli',
+  },
+  {
+    id: 'p6',
+    titleUz: 'Futuristik Toshkent — Ekologik Megapolis',
+    prompt: "Futuristik Toshkent teleminorasi va osmono'par binolari, yam-yashil osma bog'lar, quyosh panellari va toza ko'k osmon, 8K ultra aniqlik",
+    style: 'digital_art',
+    aspectRatio: '16:9',
+    categoryUz: 'O‘zbekiston & Kelajak',
+    sampleBadgeUz: 'Shaharlar',
+  },
+  {
+    id: 'p7',
+    titleUz: 'Ipak Yo‘li karvoni sahro qumlarida',
+    prompt: "Qadimgi Ipak Yo'lida ketayotgan tuya karvoni, Qizilqum sahrosidagi oltin qum tepaliklari, botayotgan quyosh va qadimiy karvonsaroy silueti",
+    style: 'cinematic',
+    aspectRatio: '16:9',
+    categoryUz: 'Tarix & Tabiat',
+    sampleBadgeUz: 'Tarixiy',
+  },
+  {
+    id: 'p8',
+    titleUz: 'Anime: Sakura daraxti ostidagi talaba',
+    prompt: "Yaponiyada bahor fasli, gullanayotgan pushti sakura daraxti ostida kitob o'qiyotgan talaba qiz, quyosh nurlari va tushayotgan barglar, Makoto Shinkai uslubi",
+    style: 'anime',
+    aspectRatio: '16:9',
+    categoryUz: 'Anime',
+    sampleBadgeUz: 'Anime',
+  },
+];
+
+export const LOADING_MESSAGES_UZ: string[] = [
+  'Google Gemini modeli g‘oyangizni tahlil qilmoqda...',
+  'Yorug‘lik, ranglar va kompozitsiya hisoblanmoqda...',
+  'Yuqori sifatli 8K detallar va teksturalar yaratilmoqda...',
+  'Vizual uslub va atmosfera boyitilmoqda...',
+  'Tasvir yakunlanmoqda va render qilinmoqda...',
+];
